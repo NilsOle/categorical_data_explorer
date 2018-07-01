@@ -4,7 +4,7 @@ Client-sided visualization tool for categorical data (prototype). Using Highchar
 
 ## Live demo
 
-Find the demo here: [http://www.nilsole.net/else/github/cat_cluster/index.html](http://www.nilsole.net/else/github/cat_cluster/index.html])
+Find the demo here: [http://www.nilsole.net/else/github/cat_cluster/index.html](http://www.nilsole.net/else/github/cat_cluster/index.html)
 
 <img src="./readme/screenshot.png" width="100%"/>
  
