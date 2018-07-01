@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <link href="./dist/icomoon/style.css" rel="stylesheet">
+
+    <style>
+
+        body {
+            margin:15px;
+        }
+
+        .bg-distribution-list {
+            box-sizing: border-box;
+            color: rgb(102, 102, 102);
+            display: block;
+            float: right;
+            font-family: 'Open Sans', arial, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 300;
+            line-height: 20px;
+            list-style-image: none;
+            list-style-position: outside;
+            list-style-type: none;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            width: 100%;
+        }
+
+        .bg-distribution-list .bg-distribution-box {
+            -webkit-background-clip: border-box;
+            -webkit-background-origin: padding-box;
+            -webkit-background-size: auto;
+            background-attachment: scroll;
+            background-clip: border-box;
+            background-image: none;
+            background-origin: padding-box;
+            background-size: auto;
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            box-sizing: border-box;
+            color: rgb(102, 102, 102);
+            display: block;
+            float: left;
+            font-family: 'Open Sans', arial, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 300;
+            height: 52px;
+            line-height: 20px;
+            list-style-image: none;
+            list-style-position: outside;
+            list-style-type: none;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            width: 180px;
+            overflow: hidden;
+        }
+
+        .bg-distribution-list .bg-distribution-box .details {
+            box-sizing: border-box;
+            color: rgb(255, 255, 255);
+            display: block;
+            float: right;
+            font-family: 'Open Sans', arial, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 300;
+            height: 41px;
+            line-height: 20px;
+            list-style-image: none;
+            list-style-position: outside;
+            list-style-type: none;
+            margin-left: 10px;
+            text-align: right;
+        }
+
+        .bg-distribution-list .bg-distribution-box .details .big {
+            box-sizing: border-box;
+            color: rgb(255, 255, 255);
+            display: inline;
+            font-family: 'Open Sans', arial, sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 600;
+            height: auto;
+            line-height: 20px;
+            list-style-image: none;
+            list-style-position: outside;
+            list-style-type: none;
+            text-align: right;
+            width: auto;
+        }
+
+        .bg-distribution-list .bg-distribution-box .details .small {
+
+            box-sizing: border-box;
+            color: rgb(255, 255, 255);
+            display: block;
+            font-family: 'Open Sans', arial, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 300;
+            height: 20px;
+            line-height: 20px;
+            list-style-image: none;
+            list-style-position: outside;
+            list-style-type: none;
+            text-align: right;
+        }
+
+        #mainnav ul li .current-arrow {
+            top: 17px;
+        }
+
+        .btn-xs {
+            margin-left: 2px;
+        }
+
+        .modal-backdrop {
+            z-index:0;
+        }
+
+        button.close {
+            top: -22px;
+            position: relative;
+        }
+
+        #mainnav {
+            margin-bottom: 20px;
+        }
+
+    </style>
+    <title>cat_cluster</title>
+  </head>
+  <body>
+
+<ul class="nav nav-tabs" id="mainnav" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link" id="sample_li" data-toggle="tab" href="#sample" role="tab" aria-controls="sample" aria-selected="true">Sample</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="single_li" data-toggle="tab" href="#single" role="tab" aria-controls="single" aria-selected="false">Single</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="subsets_li" data-toggle="tab" href="#subsets" role="tab" aria-controls="subsets" aria-selected="false">Subsets</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" id="clusters_li" data-toggle="tab" href="#clusters" role="tab" aria-controls="clusters" aria-selected="false">Clusters</a>
+  </li>
+</ul>
+
+  <div class="row">
+    <div class="col-lg-9">
+      <h3>Frequency chart</h3>
+                      <button class="btn btn-sm btn-default" id="btn_show_freqtables" type="button" data-original-title="" style="position: absolute;right: 15px;top:15px;">Show frequency tables
+                </button>
+      <div style="overflow: scroll; max-height: 450px;">
+      <div id="container">
+      </div>
+      </div>
+
+  </div>
+    <div class="col-lg-3">
+      <h3>Distributions</h3>
+      <button id="btn_new_subset" class="btn btn-sm btn-default" style="margin-bottom: 10px;display: none;">Define new subset</button>
+      <ul class="bg-distribution-list" id="subset_list"></ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-9">
+      <h3>Data Sheet &amp; Sample Selection</h3> 
+      (<span id="tmpl_current_sample_numbers"></span>)
+      <div id="exampleGrid" class="dataTable handsontable" style="height:200px;"></div>
+    </div>
+    <div class="col-lg-3">
+      <h3>Info</h3>
+      <span class="body" id="infotext"></span>
+    </div>
+  </div>
+
+<div id="qbplugin"></div>
+
+<script type="text/javascript" charset="utf-8" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+
+<style>
+
+    #color_input {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        width: 0;
+        height: 50px;
+        border-right: 50px solid green;
+        line-height: 50px;
+    }
+
+    .highcharts-tooltip span {
+
+        height: auto;
+        width: 250px;
+        overflow: auto;
+        white-space: normal !important;
+    }
+
+
+</style>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js" integrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js" integrity="sha256-erF9fIMASEVmAWGdOmQi615Bmx0L/vWNixxTNDXS4FQ=" crossorigin="anonymous"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-handsontable/0.10.2/jquery.handsontable.min.js"></script>
+<link rel="stylesheet" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/jquery-handsontable/0.10.2/jquery.handsontable.full.css">
+<script type="text/javascript" charset="utf-8" src="./dist/js/colpick.js"></script>
+<link rel="stylesheet" media="screen" href="./dist/css/colpick.css">
+<script src="https://code.highcharts.com/4.0.4/highcharts.js"></script>
+<script src="https://code.highcharts.com/4.0.4/highcharts-more.js"></script>
+<script src="./dist/js/catcluster.org.dev.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+<div class="modal fade" id="div_freq_section" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel_freq"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width:90%;">
+        <div class="modal-content" style="padding:20px;">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myLargeModalLabel_freq">Frequency tables</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div id="freq_area">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="loader" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel_loader" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width:90%;">
+        <div class="modal-content" style="padding:20px;">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myLargeModalLabel_loader">Loading app...</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>            
+            </div>
+            <div class="modal-body">
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="div_edit_section" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel_edit" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width:90%;">
+        <div class="modal-content" style="padding:20px;">
+            <div class="modal-header">
+            <h4 class="modal-title" id="myLargeModalLabel_edit">Edit subset</h4>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="widget">
+                            <div class="widget-header">
+                                <div class="title">
+                                    <span class="fs1" aria-hidden="true" data-icon="&#xe098;"></span> Please click on the bubbles to select who you would like to include:
+                                </div>
+                            </div>
+                            <div class="widget-body" style="overflow:scroll;height: 900px;">
+                                <div id="selectcontainer" style=""></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="widget">
+                            <div class="widget-header">
+                                <div class="title">
+                                    <span class="fs1" aria-hidden="true" data-icon="&#xe0f7;"></span> Live stats
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <b><span class="body" id="tmpl_current_subset_numbers"></span></b>
+                                <br><br>
+                                <b><span class="body" id="tmpl_current_subset_conditionstring"></span></b>
+                            </div>
+                        </div>
+
+                        <div class="widget">
+                            <div class="widget-header">
+                                <div class="title">
+                                    <span class="fs1" aria-hidden="true" data-icon="&#xe13f;"></span> Subset properties
+                                </div>
+                            </div>
+                            <div class="widget-body">
+
+
+                                <div class="form-group">
+                                    <label for="input_subset_name" class="control-label">Subset name:</label>
+                                    <input type="text" id="input_subset_name" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="color_input" class="control-label">Subset color:</label>
+                                    <input type="text" id="color_input" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-lg btn-default" type="button" data-original-title="" id="btn_edit_done">
+                            OK
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>
