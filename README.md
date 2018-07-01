@@ -5,7 +5,7 @@ Client-sided visualization tool for categorical data (prototype).
 * Using Highcharts and Handsontable, the tool displays observations in the shape of a two-dimensional bubble chart. 
 * It not only includes a chart, but also a corresponding table view for exploring the underlying raw data. 
 * Users can interactively define new subsets and include them in the chart.
-* Furthermore the tool includes an SPSS-style contingency table view to display subsets proportions. 
+* Furthermore the tool includes an SPSS-style contingency table view to display subset proportions. 
 
 ## Live demo
 
