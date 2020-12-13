@@ -9,7 +9,7 @@ Client-sided visualization tool for categorical data (prototype).
 
 ## Live demo
 
-Find the demo here: [http://www.nilsole.net/else/github/cat_cluster/index.html](http://www.nilsole.net/else/github/cat_cluster/index.html)
+Find the demo here: [https://www.nilsole.net/cat_cluster/index.html](https://www.nilsole.net/cat_cluster/index.html)
 
 <img src="./readme/screenshot.png" width="100%"/>
  
